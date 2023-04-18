@@ -1,1 +1,0 @@
-SELECT * FROM 4119db.student;
