@@ -45,4 +45,16 @@ select * from Future_Emp where salary=(select min(salary) from Future_Emp);
 select dept,sum(working_hours) as 'total hours' from Future_Emp group by dept having sum(working_hours)>15;
 
 
+#order by name-------ascending order
+select* from Future_Emp order by ename asc;
+
+#order by designation
+select* from Future_Emp order by designation;
+
+#order by salary descending order
+select* from Future_Emp order by salary desc;
+
+#order by salary(by default ascending)
+select* from Future_Emp order by salary;
+
 
