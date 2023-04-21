@@ -52,6 +52,17 @@ select Student_join.form_no,fname,course from Student_join right join fees on St
 select* from Student_join where fname in (select fname from Student_join where age>24);
 select * from fees where form_no in(select form_no from fees where amount>5500);
 select*from Student_join where age=(select max(age) from Student_join);
+select* from student_join where city not in (select city from student_join where city='nadia');
+select * from fees where course !=(select course from fees where course='java');
+select * from fees where amount>(select amount from fees where course='python');
 
+insert into fees value('82',9000,'IT'); # cannot add or update a child row: a foreign key constraint
+insert into Student_join value (11,'pallabi','bhaduri',26,'kolkata','82');  # can add or update a parent row
+
+# any
+select form_no,fname from student_join where form_no=any(select form_no from fees); #<>=
+
+# all
+select form_no,fname from student_join where form_no < all(select form_no from fees);
 
 
